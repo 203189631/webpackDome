@@ -1,27 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
+
 <body>
 
 </body>
-<script src="index.js">13414</script>
-<script src="sort.js">13414</script>
+<!-- <script src="index.js">13414</script>
+<script src="sort.js">13414</script> -->
 <script>
-    let arr = [1,2,3]
-    let s=  arr.map((index)=>{
-        return index*2
+    let arr = [1, 2, 3]
+    let s = arr.map((index) => {
+        return index * 2
     })
-    console.log(s )
+    console.log(s)
 </script>
 <script>
-    let script = {
-        'start': [1,2],
-        'end': []
-    };
-    script.start.push('2')
-    console.log(script.start)
+    class Data {
+        constructor() {
+            this.name = 'zhangsan'
+        }
+    }
+
+    /*  let obj = new Data()
+ 
+     obj.func = function () {
+         console.log(this.name)
+     }
+     obj.func() */
+
+     // 实现call
+    let foo = {
+        value: 1
+    }
+    function bar(name, age) {
+        console.log(name)
+        console.log(age)
+        console.log(this.value);
+    }
+    Function.prototype.call2 = function (content = window) {
+        content.fn = this // 指向调用者
+        let args = [...arguments].slice(1)
+        let result = content.fn(...args)
+        return result
+
+    }
+    bar.call2(foo,3,2)
 </script>
+
 </html>

@@ -1,31 +1,8 @@
-const fs = require('fs');
-const path = require('path');
-
-
-// let suffixArr = []
-// let folder = []
+const fs = require('fs'); //文件系统
+const path = require('path'); //路径
 const next = '/'
 
-/*fs.exists('./dist', function (exists) {//判断并新建存入文件位置。暂时
-    if (!exists) {
-        fs.mkdir('./dist/', () => {
-            fs.mkdir('./dist/js', () => {
-                searchHtml('./src')
-            })
-        })
-    } else {
-        fs.exists('./dist/js', (exists) => {
-            if (!exists) {
-                fs.mkdir('./dist/js', () => {
-                    searchHtml('./src')
-                })
-            } else {
-                searchHtml('./src')
-            }
-        })
-    }
-})
-*/
+
 searchHtml('./src')
 function searchHtml(src) {
     const data = fs.readdirSync(src)
